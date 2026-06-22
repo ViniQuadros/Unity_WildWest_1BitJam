@@ -16,4 +16,20 @@ public class Bullets : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.linearVelocity = direction * bulletSpeed;
     }
+
+    public void SetSpeed(float speed)
+    {
+        bulletSpeed = speed;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Life life = collision.GetComponent<Life>();
+
+        if (life != null)
+        {
+            life.TakeDamage();
+            Destroy(gameObject);
+        }
+    }
 }

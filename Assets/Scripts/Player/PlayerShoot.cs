@@ -9,9 +9,7 @@ public class PlayerShoot : MonoBehaviour
     private void Shoot()
     {
         Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-
         worldMousePos.z = 0;
-
         Vector2 direction = (worldMousePos - shootPoint.position).normalized;
 
         GameObject bullet = Instantiate(
