@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
+    private bool canMove = true;
 
     void Start()
     {
@@ -15,7 +16,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = moveInput * movementSpeed;
+        if (canMove)
+        {
+            rb.linearVelocity = moveInput * movementSpeed;
+        }
+    }
+
+    public void SetCanMove(bool move)
+    {
+        canMove = move;
+
+        if (!canMove)
+        {
+            moveInput = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
+        }
     }
 
     private void OnMove(InputValue value)
