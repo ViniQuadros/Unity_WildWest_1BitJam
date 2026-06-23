@@ -9,6 +9,7 @@ public class ShootAtPlayer : MonoBehaviour
     public float maxFireRate = 5f;
 
     private Transform player;
+    private bool canShoot = true;
 
     private void Start()
     {
@@ -20,9 +21,14 @@ public class ShootAtPlayer : MonoBehaviour
         StartCoroutine(Shoot());
     }
 
+    public void SetCanShoot(bool canEnemyShoot)
+    {
+        canShoot = canEnemyShoot;
+    }
+
     private IEnumerator Shoot()
     {
-        while (true)
+        while (canShoot)
         {
             float fireRate = Random.Range(minFireRate, maxFireRate);
             yield return new WaitForSeconds(fireRate);

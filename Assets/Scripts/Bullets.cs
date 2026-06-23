@@ -30,7 +30,7 @@ public class Bullets : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("BreakableWall"))
         {
             collision.GetComponent<Life>().TakeDamage();
             Destroy(gameObject);
