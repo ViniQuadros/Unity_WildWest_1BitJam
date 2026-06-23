@@ -64,6 +64,11 @@ public class PlayerShoot : MonoBehaviour
         currentBullets = maxBullets;
     }
 
+    public void SetCanShoot(bool shoot)
+    {
+        canShoot = shoot;
+    }
+
     private void OnShoot(InputValue value)
     {
         if (value.isPressed && canShoot)

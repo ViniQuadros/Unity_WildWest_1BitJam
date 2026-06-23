@@ -4,10 +4,11 @@ public class Shop : MonoBehaviour
 {
     public GameObject shopPanel;
     public PlayerMovement playerMovement;
+    public PlayerShoot playerShoot;
 
     private void Start()
     {
-        shopPanel.SetActive(false);
+        //shopPanel.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -16,6 +17,7 @@ public class Shop : MonoBehaviour
         {
             shopPanel.SetActive(true);
             playerMovement.SetCanMove(false);
+            playerShoot.SetCanShoot(false);
         }
     }
 
@@ -23,5 +25,6 @@ public class Shop : MonoBehaviour
     {
         shopPanel.SetActive(false);
         playerMovement.SetCanMove(true);
+        playerShoot.SetCanShoot(true);
     }
 }

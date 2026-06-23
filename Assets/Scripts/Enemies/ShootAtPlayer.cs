@@ -10,6 +10,7 @@ public class ShootAtPlayer : MonoBehaviour
 
     private Transform player;
     private bool canShoot = true;
+    private Coroutine shootCoroutine;
 
     private void Start()
     {
@@ -18,12 +19,15 @@ public class ShootAtPlayer : MonoBehaviour
         if (shootPoint == null)
             shootPoint = transform;
 
-        StartCoroutine(Shoot());
+        shootCoroutine = StartCoroutine(Shoot());
     }
 
     public void SetCanShoot(bool canEnemyShoot)
     {
         canShoot = canEnemyShoot;
+
+        if (!canShoot && shootCoroutine != null)
+            StopCoroutine(shootCoroutine);
     }
 
     private IEnumerator Shoot()
