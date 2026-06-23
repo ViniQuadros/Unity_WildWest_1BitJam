@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2718543889149379870}
   - component: {fileID: 6620762263543256082}
-  - component: {fileID: 1994841144411381776}
-  - component: {fileID: 5636766218613881842}
   - component: {fileID: 6952436111144784334}
+  - component: {fileID: 1994841144411381776}
+  - component: {fileID: -1097629258865189068}
   m_Layer: 0
   m_Name: Cactus
   m_TagString: Enemy
@@ -95,36 +95,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!114 &1994841144411381776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5063135058754710470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae0eaff88bf9c84783b19c29a96a7f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShootAtPlayer
-  shootPoint: {fileID: 2718543889149379870}
-  bulletPrefab: {fileID: 5963206371148240152, guid: 29c4de97788713b43b0c2c5e91226421, type: 3}
-  minFireRate: 1
-  maxFireRate: 5
---- !u!114 &5636766218613881842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5063135058754710470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d202e4151182d4546b0a870d4182a1cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Life
-  maxHealth: 3
-  currentHealth: 3
 --- !u!61 &6952436111144784334
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -171,3 +141,34 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.875}
   m_EdgeRadius: 0
+--- !u!114 &1994841144411381776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5063135058754710470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae0eaff88bf9c84783b19c29a96a7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShootAtPlayer
+  shootPoint: {fileID: 2718543889149379870}
+  bulletPrefab: {fileID: 5963206371148240152, guid: 29c4de97788713b43b0c2c5e91226421, type: 3}
+  minFireRate: 1
+  maxFireRate: 5
+--- !u!114 &-1097629258865189068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5063135058754710470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f228860afa12aa4083ebc63ed68c20b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyLife
+  maxHealth: 3
+  currentHealth: 3
+  effectPrefab: {fileID: 4150507518471348442, guid: dc611f300cd499f428c05f447222a4f7, type: 3}
