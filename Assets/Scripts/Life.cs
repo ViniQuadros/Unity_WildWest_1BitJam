@@ -5,6 +5,8 @@ public class Life : MonoBehaviour
     public int maxHealth = 3;
     public int currentHealth = 3;
 
+    protected bool isDead = false;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -12,10 +14,14 @@ public class Life : MonoBehaviour
 
     public virtual void TakeDamage()
     {
-        currentHealth--;
-        if (currentHealth <= 0)
+        if (!isDead)
         {
-            Die();
+            currentHealth--;
+            if (currentHealth <= 0)
+            {
+                isDead = true;
+                Die();
+            }
         }
     }
 

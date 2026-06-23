@@ -5,6 +5,7 @@ public class HayMovement : MonoBehaviour
 {
     public float moveDistance = 5f;
     public float movementSpeed = 5.0f;
+    public float rotation = 10f;
 
     private Vector3 pointA;
     private Vector3 pointB;
@@ -15,6 +16,11 @@ public class HayMovement : MonoBehaviour
         pointB = transform.position + Vector3.up * moveDistance;
 
         StartCoroutine(MoveUpDown());
+    }
+
+    private void Update()
+    {
+        transform.Rotate(0f, 0f, rotation * Time.deltaTime);
     }
 
     private IEnumerator MoveUpDown()
@@ -37,5 +43,13 @@ public class HayMovement : MonoBehaviour
         }
 
         transform.position = target;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerLife>().TakeDamage();
+        }
     }
 }
