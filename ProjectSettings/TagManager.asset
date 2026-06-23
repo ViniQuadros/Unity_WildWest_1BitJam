@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - StartingRoom
+  - BreakableWall
   layers:
   - Default
   - TransparentFX
@@ -43,10 +44,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: UI
-    uniqueID: 4028883283
-    locked: 0
-  - name: Hearts
+  - name: Player
     uniqueID: 1695955825
     locked: 0
   m_RenderingLayers:

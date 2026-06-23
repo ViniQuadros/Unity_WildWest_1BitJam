@@ -6,10 +6,12 @@ public class EnemyLife : Life
     public ParticleSystem effectPrefab;
 
     private SpriteRenderer spriteRenderer;
+    private ShootAtPlayer shootAtPlayer;
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        shootAtPlayer = GetComponent<ShootAtPlayer>();
     }
 
     public override void Die()
@@ -19,6 +21,8 @@ public class EnemyLife : Life
 
     private IEnumerator DeathEffect()
     {
+        shootAtPlayer.SetCanShoot(false);
+
         spriteRenderer.enabled = false;
         ParticleSystem effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
         effect.Play();
