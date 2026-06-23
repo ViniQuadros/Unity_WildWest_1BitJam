@@ -24,6 +24,9 @@ public class ShootAtPlayer : MonoBehaviour
     {
         while (true)
         {
+            float fireRate = Random.Range(minFireRate, maxFireRate);
+            yield return new WaitForSeconds(fireRate);
+
             Vector2 direction = player.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
@@ -36,10 +39,6 @@ public class ShootAtPlayer : MonoBehaviour
             bullet.GetComponent<Bullets>().SetDirection(direction);
 
             Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-
-            float fireRate = Random.Range(minFireRate, maxFireRate);
-
-            yield return new WaitForSeconds(fireRate);
         }
     }
 }

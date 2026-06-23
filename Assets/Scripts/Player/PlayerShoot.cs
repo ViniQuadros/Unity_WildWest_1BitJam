@@ -47,11 +47,21 @@ public class PlayerShoot : MonoBehaviour
         canShoot = false;
         yield return new WaitForSeconds( reloadTime );
         currentBullets = maxBullets;
-        foreach (var bullet in bulletImages)
+        for (int i = 0; i < maxBullets; i++)
         {
-            bullet.enabled = true;
+            bulletImages[i].enabled = true;
         }
         canShoot = true;
+    }
+
+    public void IncreaseMaxBullets()
+    {
+        for (int i = 0; i <= maxBullets; i++)
+        {
+            bulletImages[i].enabled = true;
+        }
+        maxBullets++;
+        currentBullets = maxBullets;
     }
 
     private void OnShoot(InputValue value)
