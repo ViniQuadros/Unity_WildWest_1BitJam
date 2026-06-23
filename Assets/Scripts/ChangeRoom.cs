@@ -3,9 +3,13 @@ using UnityEngine;
 
 public class ChangeRoom : MonoBehaviour
 {
+    [Header("Camera")]
     public Transform cameraTransform;
     public Transform target;
     public float transitionSpeed = 10f;
+
+    [Header("Enemies")]
+    public GameObject[] enemies;
 
     [SerializeField] private BoxCollider2D boxCollider;
     private ChangeRoom startingRoom;
@@ -39,6 +43,11 @@ public class ChangeRoom : MonoBehaviour
         {
             cameraTransform.position = Vector3.MoveTowards(cameraTransform.position, destination, transitionSpeed * Time.deltaTime);
             yield return null;
+        }
+
+        foreach (GameObject en in enemies)
+        { 
+            en.SetActive(true);
         }
 
         cameraTransform.position = destination;
