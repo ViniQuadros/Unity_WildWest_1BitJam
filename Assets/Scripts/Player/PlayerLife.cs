@@ -8,6 +8,17 @@ public class PlayerLife : Life
     public PlayerMovement playerMoveMovement;
     public PlayerAnimations playerAnimations;
 
+    public void Heal()
+    {
+        uiHearts[currentHealth].GainHeart();
+        currentHealth++;
+    }
+
+    public bool CanHeal()
+    {
+        return currentHealth < maxHealth;
+    }
+
     public override void TakeDamage()
     {
         if (!isDead)
