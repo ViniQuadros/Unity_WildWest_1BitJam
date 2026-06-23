@@ -3,14 +3,17 @@ using UnityEngine;
 
 public class ShootAtPlayer : MonoBehaviour
 {
-    public Transform player;
     public Transform shootPoint;
     public GameObject bulletPrefab;
     public float minFireRate = 1f;
     public float maxFireRate = 5f;
 
+    private Transform player;
+
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+
         if (shootPoint == null)
             shootPoint = transform;
 
