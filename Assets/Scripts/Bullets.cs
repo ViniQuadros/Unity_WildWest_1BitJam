@@ -24,11 +24,15 @@ public class Bullets : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Life life = collision.GetComponent<Life>();
-
-        if (life != null)
+        if (collision.CompareTag("Player"))
         {
-            life.TakeDamage();
+            collision.GetComponent<PlayerLife>().TakeDamage();
+            Destroy(gameObject);
+        }
+
+        if (collision.CompareTag("Enemy"))
+        {
+            collision.GetComponent<Life>().TakeDamage();
             Destroy(gameObject);
         }
     }

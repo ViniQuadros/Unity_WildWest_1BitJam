@@ -10,7 +10,7 @@ public class Life : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage()
+    public virtual void TakeDamage()
     {
         currentHealth--;
         if (currentHealth <= 0)
@@ -19,7 +19,7 @@ public class Life : MonoBehaviour
         }
     }
 
-    public void Die()
+    public virtual void Die()
     {
         Destroy(gameObject);
     }

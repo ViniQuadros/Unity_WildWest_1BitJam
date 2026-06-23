@@ -8,13 +8,20 @@ public class ChangeRoom : MonoBehaviour
     public float transitionSpeed = 10f;
 
     [SerializeField] private BoxCollider2D boxCollider;
-    private bool isInTheRoom = false;
+    private ChangeRoom startingRoom;
     private bool canGetIn = true;
     private PlayerMovement playerMovement;
 
+    private static ChangeRoom currentRoom;
+
+    private void Start()
+    {
+        startingRoom = GameObject.FindGameObjectWithTag("StartingRoom").GetComponent<ChangeRoom>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && canGetIn)
+        if (collision.CompareTag("Player") && canGetIn && currentRoom != this)
         {
             playerMovement = collision.GetComponent<PlayerMovement>();
             StartCoroutine(MoveCamera());
@@ -35,6 +42,7 @@ public class ChangeRoom : MonoBehaviour
         }
 
         cameraTransform.position = destination;
+        currentRoom = this;
 
         canGetIn = true;
         playerMovement.SetCanMove(true);
