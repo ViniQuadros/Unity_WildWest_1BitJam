@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 2ddba22f5f056384689b52376d217bd8
+guid: 4395f6688d0fe7043aaa6fe741d4ede1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7524573250920378565
-    second: Bobside_0
+      213: 6935449927010160594
+    second: MenuArt_0
+  - first:
+      213: 2877203911026123251
+    second: MenuArt_1
+  - first:
+      213: 6679376690299648586
+    second: MenuArt_2
+  - first:
+      213: 6863069382401300273
+    second: MenuArt_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,30 +105,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bobside_0
+      name: MenuArt_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 3
-        width: 22
-        height: 24
+        x: 2
+        y: 157
+        width: 109
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3f0c74ce78539790800000000000000
-      internalID: -7524573250920378565
+      spriteID: 2df03f886faaf3060800000000000000
+      internalID: 6935449927010160594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuArt_1
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 137
+        width: 49
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f1a31786b1ede720800000000000000
+      internalID: 2877203911026123251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuArt_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 78
+        width: 58
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4ab55206b9e1bc50800000000000000
+      internalID: 6679376690299648586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuArt_3
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 17
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13793eebd358e3f50800000000000000
+      internalID: 6863069382401300273
       vertices: []
       indices: 
       edges: []
@@ -138,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bobside_0: -7524573250920378565
+      MenuArt_0: 6935449927010160594
+      MenuArt_1: 2877203911026123251
+      MenuArt_2: 6679376690299648586
+      MenuArt_3: 6863069382401300273
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
