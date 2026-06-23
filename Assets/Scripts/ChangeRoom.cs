@@ -46,7 +46,10 @@ public class ChangeRoom : MonoBehaviour
         }
 
         foreach (GameObject en in enemies)
-        { 
+        {
+            if (en == null)
+                break;
+
             en.SetActive(true);
         }
 

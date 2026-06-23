@@ -39,9 +39,13 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-        playerAnim.AnimateMovement(moveInput);
 
-        if (moveInput.x < 0) spriteRenderer.flipX = true;
-        if (moveInput.x > 0) spriteRenderer.flipX = false;
+        if (canMove)
+        {
+            playerAnim.AnimateMovement(moveInput);
+
+            if (moveInput.x < 0) spriteRenderer.flipX = true;
+            if (moveInput.x > 0) spriteRenderer.flipX = false;
+        }
     }
 }

@@ -6,6 +6,7 @@ public class HayMovement : MonoBehaviour
     public float moveDistance = 5f;
     public float movementSpeed = 5.0f;
     public float rotation = 10f;
+    public bool isUp = true;
 
     private Vector3 pointA;
     private Vector3 pointB;
@@ -13,7 +14,10 @@ public class HayMovement : MonoBehaviour
     void Start()
     {
         pointA = transform.position;
-        pointB = transform.position + Vector3.up * moveDistance;
+        if (isUp)
+            pointB = transform.position + Vector3.up * moveDistance;
+        else
+            pointB = transform.position + Vector3.right * moveDistance;
 
         StartCoroutine(MoveUpDown());
     }
