@@ -3,11 +3,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float movementSpeed = 5f;
+    public float walkSpeed = 5f;
+    public float sprintSpeed = 10f;
 
+    private float movementSpeed;
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private bool canMove = true;
+    private bool canRun = false;
     private PlayerAnimations playerAnim;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
@@ -15,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<PlayerAnimations>();
+
+        movementSpeed = walkSpeed;
     }
 
     private void FixedUpdate()
@@ -36,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void AllowRunning()
+    {
+        canRun = true;
+    }
+
     private void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
@@ -44,8 +54,18 @@ public class PlayerMovement : MonoBehaviour
         {
             playerAnim.AnimateMovement(moveInput);
 
-            if (moveInput.x < 0) spriteRenderer.flipX = true;
-            if (moveInput.x > 0) spriteRenderer.flipX = false;
+            if (moveInput.x < 0) 
+                spriteRenderer.flipX = true;
+            if (moveInput.x > 0) 
+                spriteRenderer.flipX = false;
+        }
+    }
+
+    private void OnSprint(InputValue value)
+    {
+        if (canRun)
+        {
+            movementSpeed = value.isPressed ? sprintSpeed : walkSpeed;
         }
     }
 }
