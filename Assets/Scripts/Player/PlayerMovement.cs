@@ -8,10 +8,13 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private bool canMove = true;
+    private PlayerAnimations playerAnim;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerAnim = GetComponent<PlayerAnimations>();
     }
 
     private void FixedUpdate()
@@ -36,5 +39,9 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+        playerAnim.AnimateMovement(moveInput);
+
+        if (moveInput.x < 0) spriteRenderer.flipX = true;
+        if (moveInput.x > 0) spriteRenderer.flipX = false;
     }
 }
