@@ -36,7 +36,7 @@ public class ShootAtPlayer : MonoBehaviour
         {
             float fireRate = Random.Range(minFireRate, maxFireRate);
             yield return new WaitForSeconds(fireRate);
-
+            SoundManager.PlaySound(SoundType.ENEMY_SHOOT);
             Vector2 direction = player.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 

@@ -13,6 +13,10 @@ public enum SoundType
     BUY_ITEM,
     SPECIAL_COWBOY,
     IHAAAA
+    BCKGROUND_MUSIC,
+    BUY_ITEM,
+    COLLECT_SPECIAL_ITEM,
+    COLLECT_ITEM
 }
 
 [Serializable]
@@ -28,7 +32,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private SoundEntry[] soundList;
 
     private static SoundManager instance;
-    private AudioSource audioSource;
+    private AudioSource sfxSource;
+    private AudioSource musicSource;
 
     private void Awake()
     {
@@ -40,7 +45,16 @@ public class SoundManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-        audioSource = GetComponent<AudioSource>();
+
+        musicSource = gameObject.AddComponent<AudioSource>();
+        musicSource.loop = true;
+
+        sfxSource = gameObject.AddComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        SoundManager.PlayBackgroundSong();
     }
 
     public static void PlaySound(SoundType sound, float volume = 1f)
@@ -49,13 +63,41 @@ public class SoundManager : MonoBehaviour
         {
             if (entry.type == sound)
             {
-                instance.audioSource.PlayOneShot(entry.clip, volume);
+                instance.sfxSource.PlayOneShot(entry.clip, volume);
                 return;
             }
         }
     }
 
     public static float GetSoundLength(SoundType sound)
+    public static void PlayBackgroundSong()
+    {
+        foreach (SoundEntry entry in instance.soundList)
+        {
+            if (entry.type == SoundType.BCKGROUND_MUSIC)
+            {
+                instance.musicSource.clip = entry.clip;
+                instance.musicSource.loop = true;
+                instance.musicSource.Play();
+
+                Debug.Log("Tocando m�sica: " + entry.clip.name);
+
+                return;
+            }
+        }
+    }
+
+    public static void PauseBackgroundSong()
+    {
+        instance.musicSource.Pause();
+    }
+
+    public static void ContinueBackgroundSong()
+    {
+        instance.musicSource.UnPause();
+    }
+
+    public static AudioClip GetClip(SoundType sound)
     {
         foreach (SoundEntry entry in instance.soundList)
         {

@@ -18,6 +18,7 @@ public class IncreaseBulletCounter : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            SoundManager.PlaySound(SoundType.COLLECT_SPECIAL_ITEM);
             PlayerShoot playerShoot = collision.GetComponent<PlayerShoot>();
             if (playerShoot != null && canCollect)
             {

@@ -36,12 +36,12 @@ public class PlayerLife : Life
 
     private IEnumerator DeathRoutine()
     {
+        SoundManager.PauseBackgroundSong();
         SoundManager.PlaySound(SoundType.KILL_PLAYER);
         playerMoveMovement.SetCanMove(false);
         playerAnimations.PlayDeathAnim();
-
-        yield return new WaitForSeconds(SoundManager.GetSoundLength(SoundType.KILL_PLAYER));
-
+        yield return new WaitForSeconds(SoundManager.GetClip(SoundType.KILL_PLAYER).length);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SoundManager.ContinueBackgroundSong();
     }
 }
