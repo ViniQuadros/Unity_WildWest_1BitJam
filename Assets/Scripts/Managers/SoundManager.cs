@@ -1,5 +1,6 @@
-using UnityEngine;
 using System;
+using UnityEngine;
+using UnityEngine.Rendering;
 
 public enum SoundType
 {
@@ -9,7 +10,9 @@ public enum SoundType
     HURT_PLAYER,
     KILL_CACTUS,
     KILL_PLAYER,
-    BUY_ITEM
+    BUY_ITEM,
+    SPECIAL_COWBOY,
+    IHAAAA
 }
 
 [Serializable]
@@ -50,5 +53,18 @@ public class SoundManager : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public static float GetSoundLength(SoundType sound)
+    {
+        foreach (SoundEntry entry in instance.soundList)
+        {
+            if (entry.type == sound)
+            {
+                return entry.clip.length;
+            }
+        }
+
+        return 1f;
     }
 }

@@ -70,6 +70,28 @@ public class PlayerShoot : MonoBehaviour
         canShoot = shoot;
     }
 
+    public Transform GetShootPoint()
+    {
+        return shootPoint;
+    }
+
+    public void SpecialShoot(Vector2 direction)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            SoundManager.PlaySound(SoundType.PLAYER_SHOOT);
+
+            GameObject bullet = Instantiate(
+                bulletPrefab,
+                shootPoint.position,
+                shootPoint.rotation
+            );
+            bullet.GetComponent<PlayerBulllets>().SetDirection(direction);
+
+            StartCoroutine(FireRateShots());
+        }
+    }
+
     private void OnShoot(InputValue value)
     {
         if (value.isPressed && canShoot)

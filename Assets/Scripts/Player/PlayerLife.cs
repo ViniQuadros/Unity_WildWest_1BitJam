@@ -40,7 +40,7 @@ public class PlayerLife : Life
         playerMoveMovement.SetCanMove(false);
         playerAnimations.PlayDeathAnim();
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(SoundManager.GetSoundLength(SoundType.KILL_PLAYER));
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

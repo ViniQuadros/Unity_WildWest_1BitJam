@@ -5,6 +5,7 @@ public class ShopManager : MonoBehaviour
     public PlayerMovement playerMovement;
     public PlayerLife playerLife;
     public PlayerCoins playerCoins;
+    public PlayerSpecialAttack playerSpecialAttack;
 
     public void BuyHealing(int amount)
     {
@@ -28,7 +29,7 @@ public class ShopManager : MonoBehaviour
     {
         if (playerCoins.CheckPrice(amount))
         {
-
+            playerSpecialAttack.AllowSpecialAttack();
         }
     }
 
