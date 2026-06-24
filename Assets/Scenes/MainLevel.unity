@@ -769,7 +769,7 @@ MonoBehaviour:
   - type: 0
     clip: {fileID: 8300000, guid: 31445a2394ae0c94994a7517b1372ff9, type: 3}
   - type: 1
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 168364565131e764b9606b6ddf3076fa, type: 3}
   - type: 2
     clip: {fileID: 8300000, guid: ba9b749ed52556443bd871221916c040, type: 3}
   - type: 3
@@ -777,7 +777,7 @@ MonoBehaviour:
   - type: 4
     clip: {fileID: 8300000, guid: f9034c4dd402eeb4e9b08c226c422489, type: 3}
   - type: 5
-    clip: {fileID: 8300000, guid: cd1e630b563a3564b8538d3702bb7449, type: 3}
+    clip: {fileID: 8300000, guid: d8e6a31f7aec40b43aee756a6c7fee8d, type: 3}
   - type: 6
     clip: {fileID: 8300000, guid: 4bf4d674514cda74e9f95429c4548626, type: 3}
 --- !u!82 &238739877
