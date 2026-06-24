@@ -8,6 +8,7 @@ public class Key : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            SoundManager.PlaySound(SoundType.COLLECT_ITEM);
             collision.GetComponent<PlayerKeys>().AddKey(this);
             Destroy(gameObject);
         }
