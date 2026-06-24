@@ -21,19 +21,4 @@ public class Bullets : MonoBehaviour
     {
         bulletSpeed = speed;
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            collision.GetComponent<PlayerLife>().TakeDamage();
-            Destroy(gameObject);
-        }
-
-        if (collision.CompareTag("Enemy") || collision.CompareTag("BreakableWall"))
-        {
-            collision.GetComponent<Life>().TakeDamage();
-            Destroy(gameObject);
-        }
-    }
 }

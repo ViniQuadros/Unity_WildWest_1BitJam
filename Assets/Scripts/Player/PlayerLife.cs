@@ -23,6 +23,7 @@ public class PlayerLife : Life
     {
         if (!isDead)
         {
+            SoundManager.PlaySound(SoundType.HURT_PLAYER);
             uiHearts[currentHealth - 1].LoseHeart();
             base.TakeDamage();
         }
@@ -35,6 +36,7 @@ public class PlayerLife : Life
 
     private IEnumerator DeathRoutine()
     {
+        SoundManager.PlaySound(SoundType.KILL_PLAYER);
         playerMoveMovement.SetCanMove(false);
         playerAnimations.PlayDeathAnim();
 

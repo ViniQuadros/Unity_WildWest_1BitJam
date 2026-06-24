@@ -11,7 +11,7 @@ public class ShopManager : MonoBehaviour
         if (playerLife.CanHeal() && playerCoins.CheckPrice(amount))
         {
             playerLife.Heal();
-            playerCoins.RemoveCoins(amount);
+            CompletePurchase(amount);
         }
     }
 
@@ -20,7 +20,7 @@ public class ShopManager : MonoBehaviour
         if (playerCoins.CheckPrice(amount))
         {
             playerMovement.AllowRunning();
-            playerCoins.RemoveCoins(amount);
+            CompletePurchase(amount);
         }
     }
 
@@ -30,5 +30,11 @@ public class ShopManager : MonoBehaviour
         {
 
         }
+    }
+
+    private void CompletePurchase(int amount)
+    {
+        playerCoins.RemoveCoins(amount);
+        SoundManager.PlaySound(SoundType.BUY_ITEM);
     }
 }

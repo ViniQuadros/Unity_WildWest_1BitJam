@@ -1,53 +1,54 @@
-using System;
 using UnityEngine;
+using System;
 
 public enum SoundType
 {
-    SHOOT,
-    COLLECT,
-    HURT
+    PLAYER_SHOOT,
+    ENEMY_SHOOT,
+    COLLECT_COIN,
+    HURT_PLAYER,
+    KILL_CACTUS,
+    KILL_PLAYER,
+    BUY_ITEM
 }
 
-[RequireComponent(typeof(AudioSource)), ExecuteInEditMode]
+[Serializable]
+public struct SoundEntry
+{
+    public SoundType type;
+    public AudioClip clip;
+}
+
+[RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] private SoundList[] soundList;
+    [SerializeField] private SoundEntry[] soundList;
+
     private static SoundManager instance;
     private AudioSource audioSource;
 
     private void Awake()
     {
-        instance = this;
-    }
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-    private void Start()
-    {
+        instance = this;
+        DontDestroyOnLoad(gameObject);
         audioSource = GetComponent<AudioSource>();
     }
 
-    public static void PlaySound(SoundType sound, float volume = 1)
+    public static void PlaySound(SoundType sound, float volume = 1f)
     {
-        //instance.audioSource.PlayOneShot(instance.soundList[(int)sound], volume);
-    }
-
-#if UNITY_EDITOR
-    private void OnEnable()
-    {
-        string[] names = Enum.GetNames(typeof(SoundType));
-        Array.Resize(ref soundList, names.Length);
-
-        for (int i = 0; i < soundList.Length; i++)
+        foreach (SoundEntry entry in instance.soundList)
         {
-            soundList[i].name = names[i];
+            if (entry.type == sound)
+            {
+                instance.audioSource.PlayOneShot(entry.clip, volume);
+                return;
+            }
         }
     }
-#endif
 }
-
-[Serializable]
-public struct SoundList
-{
-    [HideInInspector] public string name;
-    [SerializeField] private AudioClip[] sounds;
-}
-

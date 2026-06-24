@@ -1,13 +1,12 @@
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class EnemyBullets : Bullets
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            SoundManager.PlaySound(SoundType.COLLECT_COIN);
-            collision.GetComponent<PlayerCoins>().IncreaseCoins();
+            collision.GetComponent<PlayerLife>().TakeDamage();
             Destroy(gameObject);
         }
     }

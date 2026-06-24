@@ -45,8 +45,8 @@ public class ShootAtPlayer : MonoBehaviour
                 shootPoint.position, 
                 Quaternion.Euler(0, 0, angle)
             );
-            bullet.GetComponent<Bullets>().SetSpeed(1f);
-            bullet.GetComponent<Bullets>().SetDirection(direction);
+            bullet.GetComponent<EnemyBullets>().SetSpeed(1f);
+            bullet.GetComponent<EnemyBullets>().SetDirection(direction);
 
             Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }

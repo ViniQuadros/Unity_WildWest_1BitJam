@@ -17,6 +17,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
+        SoundManager.PlaySound(SoundType.PLAYER_SHOOT);
         currentBullets--;
         bulletImages[currentBullets].enabled = false;
 
@@ -27,10 +28,10 @@ public class PlayerShoot : MonoBehaviour
         GameObject bullet = Instantiate(
             bulletPrefab,
             shootPoint.position,
-            Quaternion.identity
+            shootPoint.rotation
         );
 
-        bullet.GetComponent<Bullets>().SetDirection(direction);
+        bullet.GetComponent<PlayerBulllets>().SetDirection(direction);
 
         StartCoroutine(FireRateShots());
     }
