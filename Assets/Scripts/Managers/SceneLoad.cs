@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoad : MonoBehaviour
 {
+    public GameObject mainMenu;
+    public GameObject optionsMenu;
+
     public void Play()
     {
         SceneManager.LoadScene(1);
@@ -15,6 +18,13 @@ public class SceneLoad : MonoBehaviour
 
     public void Options()
     {
-        SceneManager.LoadScene("OptionsScene");
+        mainMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
+
+    public  void QuitOptions()
+    {
+        mainMenu.SetActive(true);
+        optionsMenu.SetActive(false);
     }
 }
