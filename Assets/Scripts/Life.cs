@@ -27,6 +27,7 @@ public class Life : MonoBehaviour
 
     public virtual void Die()
     {
+        SoundManager.PlaySound(SoundType.BREAKING_WALL);
         Destroy(gameObject);
     }
 }

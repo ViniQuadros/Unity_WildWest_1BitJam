@@ -15,7 +15,9 @@ public enum SoundType
     IHAAAA,
     BCKGROUND_MUSIC,
     COLLECT_SPECIAL_ITEM,
-    COLLECT_ITEM
+    COLLECT_ITEM,
+    BREAKING_WALL,
+    DOOR_OPENING
 }
 
 [Serializable]

@@ -16,6 +16,7 @@ public class OpenDoor : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<PlayerKeys>().UseKey(keyID))
             {
+                SoundManager.PlaySound(SoundType.DOOR_OPENING);
                 keyImage.enabled = false;
                 Destroy(gameObject);
             }

@@ -217,7 +217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -283,7 +283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -591,6 +591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -865,6 +869,10 @@ PrefabInstance:
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_Name
       value: Cactus (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1291,6 +1299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1484,7 +1496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1550,7 +1562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1718,6 +1730,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus4Sides (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1784,6 +1800,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 3e8ad82fb052fc642a2acc0eab39d871, type: 3}
   - type: 11
     clip: {fileID: 8300000, guid: 750d609daeff8ba4cbba400970728c0f, type: 3}
+  - type: 12
+    clip: {fileID: 8300000, guid: 4b3a9b64f2319f14ab6a72be0dd6183d, type: 3}
+  - type: 13
+    clip: {fileID: 8300000, guid: 79a570c382416ce48869e8e5ba50587c, type: 3}
 --- !u!82 &238739877
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2919,7 +2939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2990,7 +3010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4690,7 +4710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6792443693833339695, guid: dd74d79cf91ac524c9094bc418bd0e30, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5816,6 +5836,10 @@ PrefabInstance:
     - target: {fileID: 6792443693833339695, guid: dd74d79cf91ac524c9094bc418bd0e30, type: 3}
       propertyPath: m_Name
       value: Coyotte (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792443693833339695, guid: dd74d79cf91ac524c9094bc418bd0e30, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7765,7 +7789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8242,7 +8266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6792443693833339695, guid: dd74d79cf91ac524c9094bc418bd0e30, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8304,6 +8328,10 @@ PrefabInstance:
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_Name
       value: Cactus (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8374,7 +8402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8757,6 +8785,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coyotte (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6792443693833339695, guid: dd74d79cf91ac524c9094bc418bd0e30, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8821,7 +8853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9569,6 +9601,10 @@ PrefabInstance:
     - target: {fileID: 4990379732668361180, guid: 0ae67c0f4f6bc844287375c5c7999b9f, type: 3}
       propertyPath: m_Name
       value: Hay
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990379732668361180, guid: 0ae67c0f4f6bc844287375c5c7999b9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11136,6 +11172,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coyotte
       objectReference: {fileID: 0}
+    - target: {fileID: 6792443693833339695, guid: dd74d79cf91ac524c9094bc418bd0e30, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11253,6 +11293,10 @@ PrefabInstance:
     - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
       propertyPath: m_Name
       value: Cactus4Sides (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11494,6 +11538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus4Sides (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11612,6 +11660,10 @@ PrefabInstance:
     - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
       propertyPath: m_Name
       value: Cactus4Sides
+      objectReference: {fileID: 0}
+    - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
       propertyPath: m_TagString
@@ -11972,7 +12024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12262,7 +12314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6792443693833339695, guid: dd74d79cf91ac524c9094bc418bd0e30, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13040,7 +13092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6792443693833339695, guid: dd74d79cf91ac524c9094bc418bd0e30, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13186,7 +13238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13409,6 +13461,10 @@ PrefabInstance:
     - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
       propertyPath: m_Name
       value: Cactus4Sides (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14121,7 +14177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14400,6 +14456,10 @@ PrefabInstance:
     - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
       propertyPath: m_Name
       value: Cactus4Sides (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30785,7 +30845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31744,6 +31804,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31841,7 +31905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32082,7 +32146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32540,6 +32604,10 @@ PrefabInstance:
     - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
       propertyPath: m_Name
       value: Cactus4Sides (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33190,7 +33258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33354,6 +33422,10 @@ PrefabInstance:
     - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
       propertyPath: m_Name
       value: Cactus4Sides (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34022,6 +34094,10 @@ PrefabInstance:
     - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
       propertyPath: m_Name
       value: Cactus4Sides (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9110076652326968783, guid: 38500daf080690c48add2770c5f8d410, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34747,7 +34823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34943,7 +35019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35207,6 +35283,10 @@ PrefabInstance:
     - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
       propertyPath: m_Name
       value: Cactus (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063135058754710470, guid: 48dab782599289c4c8b8b6fba89cc162, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
