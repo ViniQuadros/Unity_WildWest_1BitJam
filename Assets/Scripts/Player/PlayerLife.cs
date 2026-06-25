@@ -8,6 +8,11 @@ public class PlayerLife : Life
     public PlayerMovement playerMoveMovement;
     public PlayerAnimations playerAnimations;
 
+    private void Start()
+    {
+        SoundManager.PlayBackgroundSong();
+    }
+
     public void Heal()
     {
         if (currentHealth < maxHealth)

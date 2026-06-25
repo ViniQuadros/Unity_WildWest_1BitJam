@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -16,6 +17,7 @@ public class PlayerSpecialAttack : MonoBehaviour
     public GameObject textPrefab;
     public Transform spawnPoint;
     public Image starImage;
+    public TextMeshProUGUI message;
 
     private PlayerShoot playerShoot;
     private bool hasStar = false;
@@ -49,6 +51,10 @@ public class PlayerSpecialAttack : MonoBehaviour
 
                 StartCoroutine(AttackCooldown());
             }
+            else
+            {
+                StartCoroutine(ShowMessage());
+            }
         }
     }
 
@@ -66,6 +72,16 @@ public class PlayerSpecialAttack : MonoBehaviour
         yield return new WaitForSeconds(cooldown);
         canUseSpecialAttack = true;
         starImage.color = new Color(starImage.color.r, starImage.color.g, starImage.color.b, 1f);
+    }
+
+    private IEnumerator ShowMessage()
+    {
+        message.enabled = true;
+        message.text = "There is no enemies around";
+
+        yield return new WaitForSeconds(1.5f);
+
+        message.enabled = false;
     }
 
     private void OnDrawGizmos()

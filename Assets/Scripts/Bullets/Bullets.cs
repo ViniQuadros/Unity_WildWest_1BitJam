@@ -14,7 +14,7 @@ public class Bullets : MonoBehaviour
     public void SetDirection(Vector2 direction)
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = direction * bulletSpeed;
+        rb.linearVelocity = direction.normalized * bulletSpeed;
     }
 
     public void SetSpeed(float speed)

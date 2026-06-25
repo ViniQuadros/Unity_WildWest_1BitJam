@@ -7,6 +7,7 @@ public class OpenDoor : MonoBehaviour
 {
     public int keyID = 0;
     public TextMeshProUGUI message;
+    public Image keyImage;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -15,6 +16,7 @@ public class OpenDoor : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<PlayerKeys>().UseKey(keyID))
             {
+                keyImage.enabled = false;
                 Destroy(gameObject);
             }
             else

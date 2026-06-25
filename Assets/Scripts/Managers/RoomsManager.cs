@@ -3,8 +3,8 @@ using UnityEngine;
 public class RoomsManager : MonoBehaviour
 {
     private BoxCollider2D collider;
-    private ChangeRoom currentRoom;
-    [SerializeField] private ChangeRoom startingRoom;
+    private Transform currentRoom;
+    [SerializeField] private Transform startingRoom;
 
     private void Awake()
     {
@@ -21,12 +21,12 @@ public class RoomsManager : MonoBehaviour
         collider.enabled = true;
     }
 
-    public void SetCurrentRoom(ChangeRoom room)
+    public void SetCurrentRoom(Transform room)
     {
         currentRoom = room;
     }
 
-    public bool CheckRoom(ChangeRoom room)
+    public bool CheckRoom(Transform room)
     {
         return currentRoom == room;
     }

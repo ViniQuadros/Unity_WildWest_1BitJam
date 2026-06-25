@@ -98,11 +98,6 @@ public class SoundManager : MonoBehaviour
 
     public static void PauseBackgroundSong()
     {
-        instance.musicSource.Pause();
-    }
-
-    public static void ContinueBackgroundSong()
-    {
-        instance.musicSource.UnPause();
+        instance.musicSource.Stop();
     }
 }

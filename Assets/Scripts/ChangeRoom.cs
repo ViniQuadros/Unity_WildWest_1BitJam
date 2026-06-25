@@ -23,9 +23,9 @@ public class ChangeRoom : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && canGetIn && !roomManager.CheckRoom(this))
+        if (collision.CompareTag("Player") && canGetIn && !roomManager.CheckRoom(target))
         {
-            roomManager.SetCurrentRoom(this);
+            roomManager.SetCurrentRoom(target);
             playerMovement = collision.GetComponent<PlayerMovement>();
             StartCoroutine(MoveCamera());
         }
