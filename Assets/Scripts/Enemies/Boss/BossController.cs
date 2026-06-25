@@ -3,9 +3,18 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
+    [Header("Attacks")]
+    public float minColdownTime = 0.5f;
+    public float maxCooldowTime = 2.0f;
+
     [Header("Attack One")]
     public Transform[] attackPoints;
     public GameObject spikes;
+
+    [Header("Attack Two")]
+    public float dashSpeed = 5f;
+    public float dashDuration = 1.5f;
+    public float pauseBetweenDashes = 0.3f;
 
     private enum BossState
     {   
@@ -16,9 +25,15 @@ public class BossController : MonoBehaviour
     }
     private BossState currentState;
 
-    public float cooldownTime = 2f;
-
     private Transform player;
+    private Animator animator;
+    private Rigidbody2D rb;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     private void Start()
     {
@@ -47,6 +62,7 @@ public class BossController : MonoBehaviour
                     break;
 
                 case BossState.Cooldown:
+                    float cooldownTime = Random.Range(minColdownTime, maxCooldowTime);
                     yield return new WaitForSeconds(cooldownTime);
                     currentState = BossState.Idle;
                     break;
@@ -65,6 +81,7 @@ public class BossController : MonoBehaviour
 
     private IEnumerator AttackOne()
     {
+        animator.SetTrigger("AttackOne");
         for (int i = 0; i < attackPoints.Length; i++)
         {
             GameObject bullet = Instantiate(spikes, attackPoints[i].position, attackPoints[i].rotation);
@@ -72,13 +89,38 @@ public class BossController : MonoBehaviour
             bullet.GetComponent<Bullets>().SetDirection(attackPoints[i].transform.right);
         }
 
-        Debug.Log("Attack One");
         yield return new WaitForSeconds(1f);
     }
 
     private IEnumerator AttackTwo()
     {
-        Debug.Log("Attack Two");
+        animator.SetTrigger("AttackTwo");
+
+        for (int i = 0; i < 3; i++)
+        {
+            Vector2 dashDirection = (player.position - transform.position).normalized;
+
+            float elapsed = 0f;
+
+            while (elapsed < dashDuration)
+            {
+                rb.linearVelocity = dashDirection.normalized * dashSpeed;
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            rb.linearVelocity = Vector2.zero;
+            yield return new WaitForSeconds(pauseBetweenDashes);
+        }
+
         yield return new WaitForSeconds(1f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerLife>().TakeDamage();
+        }
     }
 }
