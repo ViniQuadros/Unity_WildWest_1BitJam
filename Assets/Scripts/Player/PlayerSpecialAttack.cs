@@ -17,9 +17,7 @@ public class PlayerSpecialAttack : MonoBehaviour
     public Transform spawnPoint;
     public Image starImage;
 
-    //bool canUse = true;
     private PlayerShoot playerShoot;
-
     private bool hasStar = false;
     private bool canUseSpecialAttack = false;
 
@@ -45,7 +43,7 @@ public class PlayerSpecialAttack : MonoBehaviour
 
                     Instantiate(textPrefab, spawnPoint.position, Quaternion.identity, canvas);
 
-                    SoundManager.PlaySound(SoundType.SPECIAL_COWBOY, 1.5f);
+                    SoundManager.PlaySound(SoundType.SPECIAL_COWBOY, 2.5f);
                     SoundManager.PlaySound(SoundType.IHAAAA, 0.3f);
                 }
 

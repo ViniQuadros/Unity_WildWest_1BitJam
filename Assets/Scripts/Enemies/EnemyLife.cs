@@ -25,7 +25,9 @@ public class EnemyLife : Life
     private IEnumerator DeathEffect()
     {
         SoundManager.PlaySound(SoundType.KILL_CACTUS);
-        shootAtPlayer.SetCanShoot(false);
+        if (shootAtPlayer)
+            shootAtPlayer.SetCanShoot(false);
+
         spriteRenderer.enabled = false;
         boxCollider2D.enabled = false;
 

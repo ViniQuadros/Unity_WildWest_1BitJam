@@ -12,9 +12,8 @@ public enum SoundType
     KILL_PLAYER,
     BUY_ITEM,
     SPECIAL_COWBOY,
-    IHAAAA
+    IHAAAA,
     BCKGROUND_MUSIC,
-    BUY_ITEM,
     COLLECT_SPECIAL_ITEM,
     COLLECT_ITEM
 }
@@ -54,7 +53,7 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        SoundManager.PlayBackgroundSong();
+        PlayBackgroundSong();
     }
 
     public static void PlaySound(SoundType sound, float volume = 1f)
@@ -70,6 +69,18 @@ public class SoundManager : MonoBehaviour
     }
 
     public static float GetSoundLength(SoundType sound)
+    {
+        foreach (SoundEntry entry in instance.soundList)
+        {
+            if (entry.type == sound)
+            {
+                return entry.clip.length;
+            }
+        }
+
+        return 1f;
+    }
+
     public static void PlayBackgroundSong()
     {
         foreach (SoundEntry entry in instance.soundList)
@@ -78,10 +89,8 @@ public class SoundManager : MonoBehaviour
             {
                 instance.musicSource.clip = entry.clip;
                 instance.musicSource.loop = true;
+                instance.musicSource.volume = .5f;
                 instance.musicSource.Play();
-
-                Debug.Log("Tocando m�sica: " + entry.clip.name);
-
                 return;
             }
         }
@@ -95,18 +104,5 @@ public class SoundManager : MonoBehaviour
     public static void ContinueBackgroundSong()
     {
         instance.musicSource.UnPause();
-    }
-
-    public static AudioClip GetClip(SoundType sound)
-    {
-        foreach (SoundEntry entry in instance.soundList)
-        {
-            if (entry.type == sound)
-            {
-                return entry.clip.length;
-            }
-        }
-
-        return 1f;
     }
 }
