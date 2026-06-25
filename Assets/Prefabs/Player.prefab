@@ -133,7 +133,8 @@ GameObject:
   - component: {fileID: 5880772931467946391}
   - component: {fileID: 5505554412095252489}
   - component: {fileID: 4950449848559580024}
-  m_Layer: 0
+  - component: {fileID: 489412452924370665}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -318,6 +319,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   playerMoveMovement: {fileID: 1922493175070026099}
   playerAnimations: {fileID: 5880772931467946391}
 --- !u!114 &5880772931467946391
@@ -360,6 +362,27 @@ MonoBehaviour:
   coinsTxt:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &489412452924370665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3529684165047410890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b08d56d860584441b5db8e2456289f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSpecialAttack
+  cooldown: 90
+  target:
+    serializedVersion: 2
+    m_Bits: 256
+  boxSize: {x: 50, y: 50}
+  canvas: {fileID: 0}
+  textPrefab: {fileID: 2322266514090572666, guid: 6507de8914b555c4ead53919209eb43c, type: 3}
+  spawnPoint: {fileID: 0}
+  starImage: {fileID: 0}
 --- !u!1 &5673460923380371088
 GameObject:
   m_ObjectHideFlags: 0

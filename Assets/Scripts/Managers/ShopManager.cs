@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
+    [Header("Player")]
     public PlayerMovement playerMovement;
     public PlayerLife playerLife;
     public PlayerCoins playerCoins;
     public PlayerSpecialAttack playerSpecialAttack;
+
+    [Header("Cards")]
+    public GameObject cardBoots;
+    public GameObject cardStar;
 
     public void BuyHealing(int amount)
     {
@@ -22,6 +27,7 @@ public class ShopManager : MonoBehaviour
         {
             playerMovement.AllowRunning();
             CompletePurchase(amount);
+            Destroy(cardBoots);
         }
     }
 
@@ -30,6 +36,7 @@ public class ShopManager : MonoBehaviour
         if (playerCoins.CheckPrice(amount))
         {
             playerSpecialAttack.AllowSpecialAttack();
+            Destroy(cardStar);
         }
     }
 

@@ -2,42 +2,16 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class IncreaseBulletCounter : MonoBehaviour
+public class IncreaseBulletCounter : ItemIncrease
 {
-    public TextMeshProUGUI message;
-
-    private SpriteRenderer spriteRenderer;
-    private bool canCollect = true;
-
-    private void Start()
+    public override void TakeItem(Collider2D collision)
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
+        PlayerShoot playerShoot = collision.GetComponent<PlayerShoot>();
+        if (playerShoot != null && canCollect)
         {
-            SoundManager.PlaySound(SoundType.COLLECT_SPECIAL_ITEM);
-            PlayerShoot playerShoot = collision.GetComponent<PlayerShoot>();
-            if (playerShoot != null && canCollect)
-            {
-                playerShoot.IncreaseMaxBullets();
-                canCollect = false;
-                StartCoroutine(ShowMessage());
-            }
+            text = "Bullet Amount Increased";
+            playerShoot.IncreaseMaxBullets();
+            base.TakeItem(collision);
         }
-    }
-
-    private IEnumerator ShowMessage()
-    {
-        spriteRenderer.enabled = false;
-        message.enabled = true;
-        message.text = "Bullet amount increased";
-
-        yield return new WaitForSeconds(1.5f);
-
-        message.enabled = false;
-        Destroy(gameObject);
     }
 }

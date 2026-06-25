@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         {
             moveInput = Vector2.zero;
             rb.linearVelocity = Vector2.zero;
+            playerAnim.AnimateMovement(Vector2.zero);
         }
     }
 
@@ -48,10 +49,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnMove(InputValue value)
     {
-        moveInput = value.Get<Vector2>();
-
         if (canMove)
         {
+            moveInput = value.Get<Vector2>();
+
             playerAnim.AnimateMovement(moveInput);
 
             if (moveInput.x < 0) 
@@ -63,9 +64,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnSprint(InputValue value)
     {
-        if (canRun)
+        if (value.isPressed && canRun)
         {
-            movementSpeed = value.isPressed ? sprintSpeed : walkSpeed;
+            movementSpeed = sprintSpeed;
+        }
+        else
+        {
+            movementSpeed = walkSpeed;
         }
     }
 }

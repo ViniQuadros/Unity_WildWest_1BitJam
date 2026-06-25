@@ -89,7 +89,7 @@ public class SoundManager : MonoBehaviour
             {
                 instance.musicSource.clip = entry.clip;
                 instance.musicSource.loop = true;
-                instance.musicSource.volume = .5f;
+                instance.musicSource.volume = .2f;
                 instance.musicSource.Play();
                 return;
             }

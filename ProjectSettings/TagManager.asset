@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - StartingRoom
   - BreakableWall
+  - RoomsManager
   layers:
   - Default
   - TransparentFX

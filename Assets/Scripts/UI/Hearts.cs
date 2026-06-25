@@ -23,6 +23,12 @@ public class Hearts : MonoBehaviour
         StartCoroutine(PlayImageAnim(spriteArrayLose));
     }
 
+    public void GetNewHeart()
+    {
+        image.enabled = true;
+        GainHeart();
+    }
+
     private IEnumerator PlayImageAnim(Sprite[] sprites)
     {
         while (indexSprite < sprites.Length)

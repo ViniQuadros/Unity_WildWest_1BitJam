@@ -10,8 +10,11 @@ public class PlayerLife : Life
 
     public void Heal()
     {
-        uiHearts[currentHealth].GainHeart();
-        currentHealth++;
+        if (currentHealth < maxHealth)
+        {
+            uiHearts[currentHealth].GainHeart();
+            currentHealth++;
+        }
     }
 
     public bool CanHeal()
@@ -42,5 +45,16 @@ public class PlayerLife : Life
         playerAnimations.PlayDeathAnim();
         yield return new WaitForSeconds(SoundManager.GetSoundLength(SoundType.KILL_PLAYER));
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void IncreaseMaxLife()
+    {
+        for (int i = 0; i < maxHealth; i++)
+        {
+            uiHearts[i].GainHeart();
+        }
+        maxHealth++;
+        currentHealth = maxHealth;
+        uiHearts[maxHealth - 1].GetNewHeart();
     }
 }

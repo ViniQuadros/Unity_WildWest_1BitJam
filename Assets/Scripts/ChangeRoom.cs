@@ -12,21 +12,20 @@ public class ChangeRoom : MonoBehaviour
     public GameObject[] enemies;
 
     [SerializeField] private BoxCollider2D boxCollider;
-    private ChangeRoom startingRoom;
     private bool canGetIn = true;
     private PlayerMovement playerMovement;
-
-    private static ChangeRoom currentRoom;
+    private RoomsManager roomManager;
 
     private void Start()
     {
-        startingRoom = GameObject.FindGameObjectWithTag("StartingRoom").GetComponent<ChangeRoom>();
+        roomManager = GameObject.FindGameObjectWithTag("RoomsManager").GetComponent<RoomsManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && canGetIn && currentRoom != this)
+        if (collision.CompareTag("Player") && canGetIn && !roomManager.CheckRoom(this))
         {
+            roomManager.SetCurrentRoom(this);
             playerMovement = collision.GetComponent<PlayerMovement>();
             StartCoroutine(MoveCamera());
         }
@@ -54,7 +53,6 @@ public class ChangeRoom : MonoBehaviour
         }
 
         cameraTransform.position = destination;
-        currentRoom = this;
 
         canGetIn = true;
         playerMovement.SetCanMove(true);
