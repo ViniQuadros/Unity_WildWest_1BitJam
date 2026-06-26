@@ -1997,7 +1997,7 @@ MonoBehaviour:
   - type: 1
     clip: {fileID: 8300000, guid: 168364565131e764b9606b6ddf3076fa, type: 3}
   - type: 2
-    clip: {fileID: 8300000, guid: ba9b749ed52556443bd871221916c040, type: 3}
+    clip: {fileID: 8300000, guid: 96572e9392992844783609d4aeb3ae13, type: 3}
   - type: 3
     clip: {fileID: 8300000, guid: b7abd6e56676bfe4dbfc6726655d4d7a, type: 3}
   - type: 4
@@ -2020,6 +2020,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 4b3a9b64f2319f14ab6a72be0dd6183d, type: 3}
   - type: 13
     clip: {fileID: 8300000, guid: 79a570c382416ce48869e8e5ba50587c, type: 3}
+  - type: 14
+    clip: {fileID: 8300000, guid: 0d096f860110edf4b82f005403b84ae4, type: 3}
+  - type: 15
+    clip: {fileID: 8300000, guid: 9bd0c4683135a7e4b9eef189394b02f4, type: 3}
 --- !u!82 &238739877
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5407,6 +5411,7 @@ GameObject:
   - component: {fileID: 481084054}
   - component: {fileID: 481084056}
   - component: {fileID: 481084055}
+  - component: {fileID: 481084057}
   m_Layer: 0
   m_Name: RoomTransition (16)
   m_TagString: Untagged
@@ -5493,6 +5498,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &481084057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481084053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e706f4562a97c9459ebaf4426160f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &487186274
 GameObject:
   m_ObjectHideFlags: 0

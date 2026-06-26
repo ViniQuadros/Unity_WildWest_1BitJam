@@ -47,6 +47,7 @@ public class PlayerShoot : MonoBehaviour
     private IEnumerator Reload()
     {
         canShoot = false;
+        SoundManager.PlaySound(SoundType.RELOAD);
         yield return new WaitForSeconds( reloadTime );
         currentBullets = maxBullets;
         for (int i = 0; i < maxBullets; i++)

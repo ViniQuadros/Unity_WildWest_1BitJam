@@ -17,7 +17,9 @@ public enum SoundType
     COLLECT_SPECIAL_ITEM,
     COLLECT_ITEM,
     BREAKING_WALL,
-    DOOR_OPENING
+    DOOR_OPENING,
+    RELOAD,
+    BOSS_MUSIC
 }
 
 [Serializable]
@@ -101,5 +103,21 @@ public class SoundManager : MonoBehaviour
     public static void PauseBackgroundSong()
     {
         instance.musicSource.Stop();
+    }
+
+    public static void PlayBossSong()
+    {
+        PauseBackgroundSong();
+        foreach (SoundEntry entry in instance.soundList)
+        {
+            if (entry.type == SoundType.BOSS_MUSIC)
+            {
+                instance.musicSource.clip = entry.clip;
+                instance.musicSource.loop = true;
+                instance.musicSource.volume = .2f;
+                instance.musicSource.Play();
+                return;
+            }
+        }
     }
 }
