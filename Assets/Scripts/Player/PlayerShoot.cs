@@ -14,6 +14,7 @@ public class PlayerShoot : MonoBehaviour
     private int maxBullets = 6;
     private int currentBullets = 6;
     private bool canShoot = true;
+    public bool hasUpgrade = false;
 
     private void Shoot()
     {
@@ -61,6 +62,7 @@ public class PlayerShoot : MonoBehaviour
         {
             bulletImages[i].enabled = true;
         }
+        hasUpgrade = true;
         maxBullets++;
         currentBullets = maxBullets;
     }

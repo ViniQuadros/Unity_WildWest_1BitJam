@@ -5,7 +5,7 @@ public class PlayerCoins : MonoBehaviour
 {
     public TextMeshProUGUI[] coinsTxt;
 
-    private int totalCoins = 0;
+    public int totalCoins = 0;
 
     void Start()
     {

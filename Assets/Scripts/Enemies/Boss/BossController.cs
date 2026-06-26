@@ -82,6 +82,9 @@ public class BossController : MonoBehaviour
     private IEnumerator AttackOne()
     {
         animator.SetTrigger("AttackOne");
+
+        yield return new WaitForSeconds(0.6f);
+
         for (int i = 0; i < attackPoints.Length; i++)
         {
             GameObject bullet = Instantiate(spikes, attackPoints[i].position, attackPoints[i].rotation);
@@ -94,10 +97,11 @@ public class BossController : MonoBehaviour
 
     private IEnumerator AttackTwo()
     {
-        animator.SetTrigger("AttackTwo");
+       
 
         for (int i = 0; i < 3; i++)
         {
+            animator.SetTrigger("AttackTwo");
             Vector2 dashDirection = (player.position - transform.position).normalized;
 
             float elapsed = 0f;

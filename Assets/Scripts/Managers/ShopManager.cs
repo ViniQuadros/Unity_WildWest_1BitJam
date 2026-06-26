@@ -36,6 +36,7 @@ public class ShopManager : MonoBehaviour
         if (playerCoins.CheckPrice(amount))
         {
             playerSpecialAttack.AllowSpecialAttack();
+            CompletePurchase(amount);
             Destroy(cardStar);
         }
     }

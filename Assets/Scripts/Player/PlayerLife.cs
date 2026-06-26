@@ -7,6 +7,8 @@ public class PlayerLife : Life
     public Hearts[] uiHearts;
     public PlayerMovement playerMoveMovement;
     public PlayerAnimations playerAnimations;
+    public bool hasUpgrade = false;
+
 
     private void Start()
     {
@@ -49,7 +51,10 @@ public class PlayerLife : Life
         playerMoveMovement.SetCanMove(false);
         playerAnimations.PlayDeathAnim();
         yield return new WaitForSeconds(SoundManager.GetSoundLength(SoundType.KILL_PLAYER));
+
+       
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
     }
 
     public void IncreaseMaxLife()
@@ -58,6 +63,7 @@ public class PlayerLife : Life
         {
             uiHearts[i].GainHeart();
         }
+        hasUpgrade = true;
         maxHealth++;
         currentHealth = maxHealth;
         uiHearts[maxHealth - 1].GetNewHeart();
