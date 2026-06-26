@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8616142260428465355}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TargetDown
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 50855108954760978}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TargetLeft
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3318575487848822507}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TargetUp
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4615359137166903306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TargetRight
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -136,9 +136,10 @@ GameObject:
   - component: {fileID: 9199337350328209291}
   - component: {fileID: 8554917951603935367}
   - component: {fileID: 4040424107425976143}
-  m_Layer: 0
+  - component: {fileID: 3520772116450920613}
+  m_Layer: 8
   m_Name: Cactus4Sides
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -287,3 +288,19 @@ MonoBehaviour:
   - {fileID: 4615359137166903306}
   bulletPrefab: {fileID: 5963206371148240152, guid: 29c4de97788713b43b0c2c5e91226421, type: 3}
   fireInterval: 1.5
+--- !u!114 &3520772116450920613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9110076652326968783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f228860afa12aa4083ebc63ed68c20b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyLife
+  maxHealth: 4
+  currentHealth: 4
+  effectPrefab: {fileID: 4150507518471348442, guid: dc611f300cd499f428c05f447222a4f7, type: 3}
+  coinPrefab: {fileID: 4668566993063551587, guid: d9d5f312310760c4fa782950860fad80, type: 3}

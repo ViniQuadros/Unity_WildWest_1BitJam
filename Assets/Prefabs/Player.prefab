@@ -383,6 +383,7 @@ MonoBehaviour:
   textPrefab: {fileID: 2322266514090572666, guid: 6507de8914b555c4ead53919209eb43c, type: 3}
   spawnPoint: {fileID: 0}
   starImage: {fileID: 0}
+  message: {fileID: 0}
 --- !u!1 &5673460923380371088
 GameObject:
   m_ObjectHideFlags: 0

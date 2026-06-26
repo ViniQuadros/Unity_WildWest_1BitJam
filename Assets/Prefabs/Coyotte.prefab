@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6911802315208270649}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 6940056637476344558}
   - component: {fileID: 4347145324780388661}
   - component: {fileID: 8528328506914689292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Coyotte
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -237,14 +237,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   moveSpeed: 2.5
-  chaseRadius: 5
   attackRadius: 1.5
   playerMask:
     serializedVersion: 2
     m_Bits: 128
-  attackPos: {fileID: 6911802315208270649}
-  attackRange: 1
-  startTimeBetweenAttack: 0.5
+  startTimeBetweenAttack: 1.5
 --- !u!114 &8528328506914689292
 MonoBehaviour:
   m_ObjectHideFlags: 0

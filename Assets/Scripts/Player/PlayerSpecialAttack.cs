@@ -84,7 +84,7 @@ public class PlayerSpecialAttack : MonoBehaviour
         message.enabled = false;
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(transform.position, boxSize);

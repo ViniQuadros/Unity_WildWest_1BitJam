@@ -8,6 +8,7 @@ TagManager:
   - StartingRoom
   - BreakableWall
   - RoomsManager
+  - WallBlocker
   layers:
   - Default
   - TransparentFX
