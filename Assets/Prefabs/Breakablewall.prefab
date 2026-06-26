@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2540433608556352899}
   - component: {fileID: 9061911123133146740}
-  - component: {fileID: 2314058159142206767}
+  - component: {fileID: 9022252112169944360}
   m_Layer: 0
   m_Name: Breakablewall
   m_TagString: BreakableWall
@@ -81,7 +81,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2314058159142206767
+--- !u!114 &9022252112169944360
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,9 +90,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1119689371648019734}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d202e4151182d4546b0a870d4182a1cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 9402fc93aacdfef418cd5c7c292803a8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Life
+  m_EditorClassIdentifier: Assembly-CSharp::BreakingDoor
   maxHealth: 5
   currentHealth: 5
 --- !u!1 &2612028558639997329
