@@ -29,6 +29,11 @@ public class BossController : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb;
 
+    private void OnEnable()
+    {
+        StartCoroutine(BossBehaviour());
+    }
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
