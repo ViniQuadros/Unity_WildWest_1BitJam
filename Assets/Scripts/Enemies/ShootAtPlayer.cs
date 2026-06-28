@@ -12,14 +12,18 @@ public class ShootAtPlayer : MonoBehaviour
     private bool canShoot = true;
     private Coroutine shootCoroutine;
 
+    private void OnEnable()
+    {
+        canShoot = true;
+        shootCoroutine = StartCoroutine(Shoot());
+    }
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         if (shootPoint == null)
             shootPoint = transform;
-
-        shootCoroutine = StartCoroutine(Shoot());
     }
 
     public void SetCanShoot(bool canEnemyShoot)

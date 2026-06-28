@@ -3,10 +3,24 @@ using UnityEngine.Audio;
 
 public class MixerManager : MonoBehaviour
 {
+    public static MixerManager instance;
     [SerializeField] private AudioMixer myAudioMixer;
 
-    public void Setvolume(float sliderValue)
+    private void Awake()
     {
-        myAudioMixer.SetFloat("MasterVolume", Mathf.Log10(sliderValue) * 20);
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void SetVolume(float sliderValue)
+    {
+        float clampedValue = Mathf.Max(sliderValue, 0.0001f);
+        myAudioMixer.SetFloat("MasterVolume", Mathf.Log10(clampedValue) * 20);
     }
 }

@@ -44,7 +44,7 @@ public class PlayerShoot : MonoBehaviour
         canShoot = true;
     }
 
-    private IEnumerator Reload()
+    public IEnumerator Reload()
     {
         canShoot = false;
         SoundManager.PlaySound(SoundType.RELOAD);

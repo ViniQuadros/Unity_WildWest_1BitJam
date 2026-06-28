@@ -22,6 +22,11 @@ public class BossLife : Life
         StartCoroutine("BossDeath");
     }
 
+    public void HealBoss()
+    {
+        currentHealth = maxHealth;
+    }
+
     private IEnumerator BossDeath()
     {
         SoundManager.PauseBackgroundSong();

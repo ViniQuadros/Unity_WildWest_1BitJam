@@ -1,14 +1,19 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerLife : Life
 {
     public Hearts[] uiHearts;
     public PlayerMovement playerMoveMovement;
     public PlayerAnimations playerAnimations;
+    public PlayerShoot playerShoot;
     public bool hasUpgrade = false;
+    public HideAllEnemies hideAllEnemies;
 
+    [Header("Gambiarra")]
+    public GameObject boss;
+    public BossLife bossLife;
+    public Transform bossTransform;
 
     private void Start()
     {
@@ -21,6 +26,14 @@ public class PlayerLife : Life
         {
             uiHearts[currentHealth].GainHeart();
             currentHealth++;
+        }
+    }
+
+    public void RestoreAllHealth()
+    {
+        for (int i = 0; i < maxHealth; i++)
+        {
+            Heal();
         }
     }
 
@@ -47,14 +60,22 @@ public class PlayerLife : Life
     private IEnumerator DeathRoutine()
     {
         SoundManager.PauseBackgroundSong();
+
         SoundManager.PlaySound(SoundType.KILL_PLAYER);
         playerMoveMovement.SetCanMove(false);
         playerAnimations.PlayDeathAnim();
+        
         yield return new WaitForSeconds(SoundManager.GetSoundLength(SoundType.KILL_PLAYER));
 
-       
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
+        hideAllEnemies.HideEnemies();
+        RestoreBoss();
+        SaveManager.instance.LoadGame();
+
+        //RevivePlayer
+        isDead = false;
+        StartCoroutine(playerShoot.Reload());
+        playerMoveMovement.SetCanMove(true);
+        playerAnimations.RevivePlayer();
     }
 
     public void IncreaseMaxLife()
@@ -67,5 +88,12 @@ public class PlayerLife : Life
         maxHealth++;
         currentHealth = maxHealth;
         uiHearts[maxHealth - 1].GetNewHeart();
+    }
+
+    private void RestoreBoss()
+    {
+        bossLife.HealBoss();
+        boss.transform.position = bossTransform.position;
+        boss.SetActive(false);
     }
 }

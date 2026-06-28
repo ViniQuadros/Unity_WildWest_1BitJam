@@ -23,6 +23,12 @@ public class FollowPlayer : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private EnemyStates currentState = EnemyStates.FOLLOW;
     private Animator animator;
+    private bool canAttack = true;
+
+    private void OnEnable()
+    {
+        canAttack = true;
+    }
 
     void Start()
     {
@@ -34,17 +40,20 @@ public class FollowPlayer : MonoBehaviour
 
     void Update()
     {
-        Collider2D hit = Physics2D.OverlapCircle(transform.position, attackRadius, playerMask);
-        currentState = hit ? EnemyStates.ATTACK : EnemyStates.FOLLOW;
-
-        switch (currentState)
+        if (canAttack)
         {
-            case EnemyStates.FOLLOW:
-                Follow();
-                break;
-            case EnemyStates.ATTACK:
-                Attack(hit);
-                break;
+            Collider2D hit = Physics2D.OverlapCircle(transform.position, attackRadius, playerMask);
+            currentState = hit ? EnemyStates.ATTACK : EnemyStates.FOLLOW;
+
+            switch (currentState)
+            {
+                case EnemyStates.FOLLOW:
+                    Follow();
+                    break;
+                case EnemyStates.ATTACK:
+                    Attack(hit);
+                    break;
+            }
         }
     }
 
@@ -66,13 +75,23 @@ public class FollowPlayer : MonoBehaviour
         if (timeBetweenAttack <= 0)
         {
             animator.SetTrigger("Attack");
-            player.GetComponent<PlayerLife>().TakeDamage();
+
+            if (player.GetComponent<PlayerLife>())
+            {
+                player.GetComponent<PlayerLife>().TakeDamage();
+            }
+
             timeBetweenAttack = startTimeBetweenAttack;
         }
         else
         {
             timeBetweenAttack -= Time.deltaTime;
         }
+    }
+
+    public void SetCanAttack(bool attack)
+    {
+        canAttack = attack;
     }
 
     private void FixedUpdate()

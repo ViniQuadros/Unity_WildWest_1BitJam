@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     public void AllowRunning()
     {
         canRun = true;
+        movementSpeed = sprintSpeed;
     }
 
     private void OnMove(InputValue value)
@@ -59,18 +60,6 @@ public class PlayerMovement : MonoBehaviour
                 spriteRenderer.flipX = true;
             if (moveInput.x > 0) 
                 spriteRenderer.flipX = false;
-        }
-    }
-
-    private void OnSprint(InputValue value)
-    {
-        if (value.isPressed && canRun)
-        {
-            movementSpeed = sprintSpeed;
-        }
-        else
-        {
-            movementSpeed = walkSpeed;
         }
     }
 }

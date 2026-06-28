@@ -7,14 +7,26 @@ public class ShootAtSides : MonoBehaviour
     public GameObject bulletPrefab;
     public float fireInterval = 1.5f;
 
-    void Start()
+    private bool canShoot = true;
+    private Coroutine shootCoroutine;
+
+    private void OnEnable()
     {
-        StartCoroutine(ShootSides());
+        canShoot = true;
+        shootCoroutine = StartCoroutine(ShootSides());
+    }
+
+    public void SetCanShoot(bool canEnemyShoot)
+    {
+        canShoot = canEnemyShoot;
+
+        if (!canShoot && shootCoroutine != null)
+            StopCoroutine(shootCoroutine);
     }
 
     private IEnumerator ShootSides()
     {
-        while (true)
+        while (canShoot)
         {
             foreach (Transform shootPoint in shootPoints)
             {

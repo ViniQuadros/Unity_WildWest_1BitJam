@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using UnityEngine.Rendering;
+using UnityEngine.Audio;
 
 public enum SoundType
 {
@@ -19,7 +19,8 @@ public enum SoundType
     BREAKING_WALL,
     DOOR_OPENING,
     RELOAD,
-    BOSS_MUSIC
+    BOSS_MUSIC,
+    SAVE
 }
 
 [Serializable]
@@ -29,9 +30,9 @@ public struct SoundEntry
     public AudioClip clip;
 }
 
-[RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
+    [SerializeField] private AudioMixer mixer;
     [SerializeField] private SoundEntry[] soundList;
 
     private static SoundManager instance;
@@ -50,9 +51,11 @@ public class SoundManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         musicSource = gameObject.AddComponent<AudioSource>();
+        musicSource.outputAudioMixerGroup = mixer.FindMatchingGroups("Master")[0];
         musicSource.loop = true;
 
         sfxSource = gameObject.AddComponent<AudioSource>();
+        sfxSource.outputAudioMixerGroup = mixer.FindMatchingGroups("Master")[0];
     }
 
     private void Start()
@@ -87,6 +90,8 @@ public class SoundManager : MonoBehaviour
 
     public static void PlayBackgroundSong()
     {
+        PauseBackgroundSong();
+
         foreach (SoundEntry entry in instance.soundList)
         {
             if (entry.type == SoundType.BCKGROUND_MUSIC)

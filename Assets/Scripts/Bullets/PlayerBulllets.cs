@@ -9,5 +9,10 @@ public class PlayerBulllets : Bullets
             collision.GetComponent<Life>().TakeDamage();
             Destroy(gameObject);
         }
+
+        if (collision.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

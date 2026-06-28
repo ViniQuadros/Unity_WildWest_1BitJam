@@ -6,6 +6,11 @@ public class HideAllEnemies : MonoBehaviour
 
     void Start()
     {
+        HideEnemies();
+    }
+
+    public void HideEnemies()
+    {
         if (hideAll)
         {
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");

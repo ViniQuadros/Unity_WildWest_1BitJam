@@ -9,6 +9,8 @@ TagManager:
   - BreakableWall
   - RoomsManager
   - WallBlocker
+  - SaveGame
+  - Wall
   layers:
   - Default
   - TransparentFX
